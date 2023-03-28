@@ -10,6 +10,11 @@
   </p>
 
   <p>
+    <strong>Categories:</strong>
+    <%= purchase.categories.map(&:name).join(', ') %>
+  </p>
+
+  <p>
     <strong>User:</strong>
     <%= purchase.user.name %>
   </p>

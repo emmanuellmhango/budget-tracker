@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases or /purchases.json
   def index
-    @purchases = Purchase.where(user_id: current_user.id)
+    @purchases = Purchase.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -65,6 +65,6 @@ class PurchasesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :user_id)
+    params.require(:purchase).permit(:name, :amount, :user_id, category_ids: [])
   end
 end

@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :category_id %> <br />
-    <%= form.collection_select :category_id, @categories, :id, :name %>
+    <%= form.label :category_ids, 'Categories' %>
+    <%= form.collection_check_boxes :category_ids, @categories, :id, :name do |cb| %>
+      <div class="checkbox">
+        <%= cb.check_box %>
+        <%= cb.label %>
+      </div>
+    <% end %>
   </div>
   
   <div>
