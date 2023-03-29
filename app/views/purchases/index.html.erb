@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Purchases</h1>
-
-<div id="purchases">
-  <% @purchases.each do |purchase| %>
-    <%= render purchase %>
-    <p>
-      <%= link_to "Show this purchase", purchase %>
-    </p>
-  <% end %>
+<div class="header-1">
+  <div class="back">
+    <a href="/categories" class="back-link"><span class='back-arrow'> &#8592; </span></a>
+  </div>
+  <div class="middle-title">
+    <center>
+      <h1>Transactions</h1>
+      <p>
+        Category <%= @category_name %> .
+        Total $<%= current_user.purchases.joins(:categories).where(categories: { id: params[:category_id] }).sum(:amount) %> 
+      </p>
+    </center>
+  </div>
+  <div class="next">
+    &nbsp;
+  </div>
 </div>
 
-<%= link_to "New purchase", new_purchase_path %>
+<div class="categories">
+  <center>
+    <p style="color: green"><%= notice %></p>
+  </center>
+  <br />
+  <% @purchases.each do |purchase| %>
+    <%= render purchase %>
+  <% end %>
+  <center>
+    <%= link_to "New purchase", new_purchase_path, class: 'down-btn' %>
+  </center>
+</div>

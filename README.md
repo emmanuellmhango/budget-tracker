@@ -161,7 +161,7 @@ If you like this project please support us by adding a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank everyone who contributed to this project
+We would like to thank [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) who made this design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,6 +183,6 @@ We would like to thank everyone who contributed to this project
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

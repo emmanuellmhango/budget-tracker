@@ -1,14 +1,47 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
+<div class="header">
+  <div class="back">
+    <span class='back-arrow back-link cursor-li' id="menu"> &#9776;</span>
+  </div>
+  <div class="middle-title">
+    <h1>Categories</h1>
+  </div>
+  <div class="next">
+    &nbsp;
+  </div>
+</div>
+<div id="menuContainerDiv" class="menu-container">
+  <div class="link-deta">
+    <center>
+    <% if user_signed_in? %>
+      <span class="logout">
+        &#10226;
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'logout-btn' %>
+      </span>
+    <% end %>
+    </center>
+  </div>
+</div>
+<div class="categories">
+  <center>
+    <p style="color: green"><%= notice %></p>
+  </center>
+  <br />
   <% @categories.each do |category| %>
     <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
   <% end %>
+  <br />
+  <center>
+    <%= link_to "add a new category", new_category_path, class: 'down-btn' %>
+  </center>
 </div>
-
-<%= link_to "New category", new_category_path %>
+<script>
+  const menuBtn = document.getElementById('menu');
+  const menuDiv = document.querySelector('.menu-container');
+  menuBtn.addEventListener('click', () => {
+    if(menuDiv.style.display === 'none') {
+      menuDiv.style.display = 'block';
+    } else {
+      menuDiv.style.display = 'none';
+    }
+  });
+</script>

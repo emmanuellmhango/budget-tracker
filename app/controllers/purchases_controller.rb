@@ -3,7 +3,9 @@ class PurchasesController < ApplicationController
 
   # GET /purchases or /purchases.json
   def index
-    @purchases = Purchase.where(user_id: current_user.id).order(created_at: :desc)
+    @category = Category.find(params[:category_id])
+    @category_name = @category.name
+    @purchases = current_user.purchases.joins(:categories).where(categories: { id: params[:category_id] })
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -24,7 +26,7 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to purchase_url(@purchase), notice: 'Purchase was successfully created.' }
+        format.html { redirect_to categories_url, notice: 'Purchase was successfully created.' }
         format.json { render :show, status: :created, location: @purchase }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +53,7 @@ class PurchasesController < ApplicationController
     @purchase.destroy
 
     respond_to do |format|
-      format.html { redirect_to purchases_url, notice: 'Purchase was successfully destroyed.' }
+      format.html { redirect_to categories_url, notice: 'Purchase was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
