@@ -1,15 +1,228 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.splash {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.link-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-total {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.category-icon {
+  padding-left: 5px;
+}
+
+.add-titl {
+  color: #434b54;
+  font-size: 18px;
+}
+
+.add-titl-lil {
+  color: #434b54;
+  font-size: 17px;
+}
+
+.span-s {
+  margin-right: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.category-name {
+  font-size: 18px;
+}
+
+.sign-up-link {
+  background-color: #3778c2;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.formart-cat-link {
+  text-decoration: none;
+  border: 1px solid #5fb523;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 18px;
+}
+
+.formart-cat-link-a {
+  text-decoration: none;
+  border: 1px solid #5fb523;
+  border-radius: 15px;
+  padding: 4px;
+  font-size: 18px;
+  bottom: 0;
+}
+
+.categories {
+  height: 100vh;
+  margin-top: -17px;
+  background-color: #f0eeee;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  color: #434b54;
+  border-radius: 4px;
+  margin: 15px;
+  background-color: #fff;
+}
+
+.icon-photo {
+  width: 100px;
+  height: 100px;
+}
+
+.formart-links {
+  font-size: 18px;
+  text-decoration: none;
+  color: #434b54;
+  margin-bottom: 15px;
+}
+
+.format {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #3778c2;
+  height: 40px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+}
+
+.title {
+  color: #434b54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  color: #fff;
+  height: 100px;
+}
+
+.header-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  color: #fff;
+  height: 150px;
+}
+
+.middle-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sign-up-form {
+  margin: 15px;
+}
+
+.next {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.back {
+  margin-left: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+}
+
+.splash-links {
+  text-decoration: none;
+}
+
+.signup-button {
+  background-color: #f0eeee;
+  height: 40px;
+  color: #434b54;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+}
+
+.down-btn {
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #5fb523;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+.cursor-li {
+  cursor: pointer;
+}
+
+.top {
+  margin-top: 10px;
+}
+
+.menu-container {
+  display: none;
+  width: 30%;
+  height: 100vh;
+  background-color: rgba(55, 120, 194, 0.9);
+  margin-top: -17px;
+  position: absolute;
+  left: -20px; 
+  transition: left 0.5s ease-in-out;
+}
+
+.menu-container.show {
+  left: 0;
+}

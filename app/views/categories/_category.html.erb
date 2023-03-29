@@ -1,17 +1,17 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
+<div id="<%= dom_id category %>" class="categories-container">
+  <div class="category-icon">
     <%= image_tag "#{category.icon}", class: 'icon-photo' %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= category.user.name %>
-  </p>
-
+    <br><br>
+    <center><%= link_to "Manage", category, class: 'formart-cat-link' %></center>
+  </div>
+  <div class="category-name">
+    <%= category.name %>
+    <br><br>
+    <center>
+    <%= link_to "View Transactions", purchases_path(category_id: category.id, category_name: category.name), class: 'formart-cat-link-a' %>
+    </center>
+  </div>
+  <div class="category-total">
+    $<%= current_user.purchases.joins(:categories).where(categories: { id: category.id }).sum(:amount) %>
+  </div>
 </div>
