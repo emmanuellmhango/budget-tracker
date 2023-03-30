@@ -15,7 +15,7 @@
     <% if user_signed_in? %>
       <span class="logout">
         &#10226;
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'logout-btn' %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'logout-btn pt-cursor' %>
       </span>
     <% end %>
     </center>
@@ -29,11 +29,31 @@
   <% @categories.each do |category| %>
     <%= render category %>
   <% end %>
-  <br />
-  <center>
-    <%= link_to "add a new category", new_category_path, class: 'down-btn' %>
-  </center>
 </div>
+
+<div class="position-down">
+  <%= link_to "ADD A NEW CATEGORY", new_category_path, class: 'down-btn border-down' %>
+</div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
   const menuBtn = document.getElementById('menu');
   const menuDiv = document.querySelector('.menu-container');
