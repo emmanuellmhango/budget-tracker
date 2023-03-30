@@ -125,7 +125,7 @@ body {
 }
 
 .small-fs {
-  font-size: 14p  x;
+  font-size: 14px;
 }
 
 .categories-container {
@@ -338,7 +338,6 @@ body {
 .border-down {
   border: 1px solid #fff;
   padding: 15px;
-  border-radius: none;
 }
 
 .position-down {
