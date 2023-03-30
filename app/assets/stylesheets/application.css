@@ -85,10 +85,6 @@ body {
   flex-grow: 2;
 }
 
-.category-total {
-  font-weight: 600;
-}
-
 .link-name {
   text-decoration: none;
 }
