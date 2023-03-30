@@ -5,7 +5,16 @@ class PurchasesController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
     @category_name = @category.name
+    @category_icon = @category.icon
     @purchases = current_user.purchases.joins(:categories).where(categories: { id: params[:category_id] })
+    return if @purchases.empty?
+
+    @purchase_lg = current_user.purchases
+      .joins(:categories)
+      .where(categories: { id: params[:category_id] })
+      .order(amount: :desc)
+      .select(:name, :amount)
+      .first
   end
 
   # GET /purchases/1 or /purchases/1.json
