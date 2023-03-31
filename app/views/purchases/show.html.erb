@@ -1,0 +1,28 @@
+<div class="header-1">
+  <div class="back">
+    <a href="/categories" class="back-link"><span class='back-arrow'> &#8592; </span></a>
+  </div>
+  <div class="middle-title">
+    <center>
+      <h1>Transactions</h1>
+      <p> Delete this transaction?</p>
+    </center>
+  </div>
+  <div class="next">
+    &nbsp;
+  </div>
+</div>
+
+<div class="categories">
+  <center>
+    <p style="color: green"><%= notice %></p>
+  </center>
+  <br />
+  <%= render @purchase %>
+
+  <div class="controls">
+    <%= button_to "Delete this", @purchase, method: :delete, class: 'span-s down-btn' %>
+  </div>
+</div>
+
+

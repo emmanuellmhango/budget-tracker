@@ -1,0 +1,43 @@
+<div class="header-2">
+  <div class="h2-top">
+    <div class="back">
+      <a href="/categories" class="back-link"><span class='back-arrow'> &#8592; </span></a>
+    </div>
+    <div class="h2-middle-title">
+      <h1>TRANSACTIONS</h1>
+    </div>
+    <div class="search">
+      &#9906;
+    </div>
+  </div>
+
+  <div class="down-recents">
+      <span>&nbsp;</span>
+      <span class="most-recent"> Most Recent </span>
+      <span class="most-ancient"> Most Ancient </span>
+  </div>
+</div>
+
+<% if @purchase_lg.present? %>
+  <div class="categories-container-3">
+    <span>
+      <%= @purchase_lg.name %>
+    </span>
+    <span>
+      <b>$<%= @purchase_lg.amount %></b>
+    </span>
+  </div>
+<% end %>
+<div class="categories">
+  <center>
+    <p style="color: green"><%= notice %></p>
+  </center>
+  <br />
+  <% @purchases.each do |purchase| %>
+    <%= render purchase %>
+  <% end %>
+</div>
+
+<div class="position-down">
+  <%= link_to "NEW PURCHASE", new_purchase_path, class: 'down-btn border-down' %>
+</div>

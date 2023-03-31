@@ -1,0 +1,18 @@
+<div id="<%= dom_id purchase %>" class="categories-container-2">
+  <div class="category-icon">
+    <%= image_tag "#{@category_icon}", class: 'icon-photo' %>
+  </div>
+  <div class="data-details">
+    <div class="top-details">
+      <div class="category-name">
+        <%= purchase.categories.map(&:name).join(', ') %> <%= purchase.name %>
+      </div>
+      <div class="category-total">
+        $<%= purchase.amount %>
+      </div>
+    </div>
+    <div class="bottom-details small-fs">
+      <%= purchase.created_at.strftime('%d %b %Y') %>
+    </div>
+  </div>
+</div>
