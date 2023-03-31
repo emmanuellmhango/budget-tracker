@@ -17,19 +17,6 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'budget-tracker-w9a5.onrender.com',
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'],
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
-  config.action_mailer.default_url_options = { host: 'https://budget-tracker-w9a5.onrender.com' }
-
-  config.action_mailer.default_options = { from: 'karolmkandawire@gmail.com' }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
